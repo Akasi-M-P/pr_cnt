@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+:root {
+  --primary-color: hsl(0, 0%, 100%);
+  --secondary-colr: hsl(294, 8%, 24%);
+  --text-transform: capitalize;
+  --box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  --primary-font: "Sour Gummy", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: var(--primary-font);
+}
+
+#container {
+  width: 80vw;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  padding: 80px 50px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  background-color: var(--primary-color);
+  text-transform: var(--text-transform);
+}
+
+#header {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+#title {
+  color: var(--secondary-colr);
+  text-transform: uppercase;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.form-control {
+  margin: 10px 0;
+}
+
+input {
+  font-family: var(--primary-font);
+  width: 30vw;
+  height: 50px;
+  text-transform: var(--text-transform);
+  outline: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 18px;
+  border-color: rgb(209, 204, 204);
+}
+
+.add-item-btn {
+  width: 10vw;
+  padding: 8px;
+  text-transform: var(--text-transform);
+  font-family: var(--primary-font);
+  font-size: 18px;
+  font-weight: bolder;
+  border-radius: 15px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: var(--secondary-colr);
+  color: var(--primary-color);
+}
+
+.add-item-btn:hover {
+  background-color: rgb(214, 209, 209);
+  color: var(--secondary-colr);
+}
+
+.filter {
+  width: 30vw;
+  margin: 20px 0;
+}
+
+#shop-items {
+  border: 1px solid rgb(240, 240, 240);
+  width: 30vw;
+  height: 400px;
+  list-style: none;
+  padding: 10px;
+  border-radius: 10px;
+  overflow: auto;
+  scroll-behavior: smooth;
+}
+
+#item {
+  padding: 10px 20px;
+  margin-bottom: 40px;
+  font-size: 18px;
+  font-weight: bolder;
+  box-shadow: var(--box-shadow);
+  cursor: pointer;
+  border-radius: 5px;
+  text-transform: var(--text-transform);
+
+  display: flex;
+  justify-content: space-between;
+
+  &:hover {
+    box-shadow: none;
+    border: 0.2px solid grey;
+  }
+}
+
+#delete:hover {
+  color: red;
+}
+
+#clear-all {
+  width: 15vw;
+  margin-top: 5px;
+  padding: 10px;
+  font-family: var(--primary-font);
+  text-transform: var(--text-transform);
+  font-size: 18px;
+  font-weight: bolder;
+  cursor: pointer;
+  border: 0.2px solid rgb(225, 231, 225);
+  border-radius: 5px;
+
+  &:hover {
+    background-color: var(--secondary-colr);
+    color: var(--primary-color);
+  }
+}
+
+.edit-mode {
+  color: #cac8c8;
+}

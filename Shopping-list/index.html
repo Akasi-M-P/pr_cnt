@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping List 📔</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- FONT AWESOME -->
+    <script
+      src="https://kit.fontawesome.com/9da87e2b4e.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <main id="container">
+      <section id="header">
+        <header id="title"><h1>📔 shopping list</h1></header>
+        <form id="item-form">
+          <div class="form-control">
+            <input
+              type="text"
+              id="item-input"
+              class="form-input"
+              name="item"
+              placeholder="add item..."
+            />
+          </div>
+          <div class="form-control">
+            <button type="submit" class="add-item-btn">
+              <i class="fa-solid fa-plus"></i> add item
+            </button>
+          </div>
+        </form>
+
+        <div class="filter">
+          <input
+            type="text"
+            id="filter"
+            class="form-input-filter"
+            placeholder="filter items"
+          />
+        </div>
+      </section>
+      <section id="content">
+        <ul id="shop-items">
+          <!-- <li id="item" class="delete-item">
+            cassava
+            <span><i class="fa-solid fa-trash-can" id="delete"></i></span>
+          </li>
+          <li id="item" class="delete-item">
+            plantain
+            <span><i class="fa-solid fa-trash-can" id="delete"></i></span>
+          </li>
+          <li id="item" class="delete-item">
+            watermelon
+            <span><i class="fa-solid fa-trash-can" id="delete"></i></span>
+          </li>
+          <li id="item" class="delete-item">
+            apples
+            <span><i class="fa-solid fa-trash-can" id="delete"></i></span>
+          </li>
+          <li id="item" class="delete-item">
+            juice
+            <span><i class="fa-solid fa-trash-can" id="delete"></i></span>
+          </li>
+          <li id="item" class="delete-item">
+            mango
+            <span><i class="fa-solid fa-trash-can" id="delete"></i></span>
+          </li> -->
+        </ul>
+      </section>
+      <footer>
+        <div>
+          <button id="clear-all">clear all</button>
+        </div>
+      </footer>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

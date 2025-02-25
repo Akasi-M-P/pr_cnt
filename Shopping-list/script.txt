@@ -1,0 +1,98 @@
+// DECLARE VARIABLES
+const clearBtn = document.getElementById("clear-all");
+
+function onClear() {
+  const itemList = document.querySelector("#shop-items");
+  const items = itemList.querySelectorAll("#item");
+  // itemList.innerHTML = "";
+  items.forEach((item) => item.remove());
+}
+
+clearBtn.addEventListener("click", onClear);
+
+// A FUNCTION THAT CREATES A NEW ITEM AND ADDS IT TO THE ITEM LIST
+function createNewItem(item) {
+  // CREATE A NEW <LI> ELEMENT (LIST ITEM)
+  const li = document.createElement("li");
+
+  // GET EMOJI FOR THE ITEM OR USE A DEFAULT ONE
+  const emoji = getEmoji(item);
+
+  // CREATE A TEXT NODE WITH THE ITEM NAME AND ADD THE EMOJI
+  li.appendChild(document.createTextNode(`${emoji} ${item}`));
+
+  // ASSIGN AN ID "ITEM" TO THE <LI> ELEMENT FOR STYLING OR IDENTIFICATION
+  li.id = "item";
+
+  // CALL THE FUNCTION TO CREATE AN ICON ELEMENT (TRASH CAN ICON FOR DELETION)
+  const icon = createIcon("fa-solid fa-trash-can", "delete");
+
+  // CALL THE FUNCTION TO CREATE A ,SPAN> ELEMENT AND PLACE THE ICON INSIDE IT
+  const span = createSpan(icon);
+
+  // APPEND THE <SPAN> ELEMENT (CONTAINING THE ICON) TO THE <LI> ELEMENT
+  li.appendChild(span);
+
+  // FIND THE ELEMENT WITH ID "shop-items" IN THE HTML AND ADD THE NEW <LI> TO IT
+  document.querySelector("#shop-items").appendChild(li);
+}
+
+// FUNCTION TO CREATE A SPAN ELEMENT THAT WRAPS AN ICON
+function createSpan(icon) {
+  // CREATE A NEW <SPAN> ELEMENT
+  const span = document.createElement("span");
+
+  // ADD THE ICON ELEMENT AS A CHILD OF THE <SPAN> ELEMENT
+  span.appendChild(icon);
+
+  // RETURN THE SPAN ELEMENT SO IT CAN BE USED ELSEWHERE
+  return span;
+}
+
+// FUNCTION TO GET AN EMOJI BASED ON THE ITEM NAME
+function getEmoji(item) {
+  const emojiMap = {
+    watermelon: "🍉",
+    apple: "🍎",
+    banana: "🍌",
+    orange: "🍊",
+    grape: "🍇",
+    bread: "🍞",
+    milk: "🥛",
+    cheese: "🧀",
+    carrot: "🥕",
+    fish: "🐟",
+    meat: "🥩",
+  };
+
+  // RETURN MATCHED EMOJI OR A DEFAULT SHOPPING CART EMOJI
+  return emojiMap[item.toLowerCase()] || "🛒";
+}
+
+// FUNCTION TO CREATE AND ICON ELEMENT WITH SPECIFIED CLASSES AND ID
+function createIcon(classes, id) {
+  // CREATE A NEW <I> ELEMENT (USED FOR ICONS IN FONT AWESOME)
+  const icon = document.createElement("i");
+
+  // ADD SPECIFIED CSS CLASSES TO THE ICON (FOR STYLING AND DISPLAY)
+  icon.className = classes;
+
+  // ASSIGN AN ID TO THE ICON FOR POSSIBLE FUTURE MANIPULATION
+  icon.id = id;
+
+  // RETURN THE ICON ELEMENT TO BE USED IN OTHER FUNCTIONS
+  return icon;
+}
+
+// CALL THE FUNCTION TO CREATE A NEW ITEM
+createNewItem("watermelon");
+createNewItem("apple");
+createNewItem("banana");
+createNewItem("orange");
+createNewItem("grape");
+createNewItem("bread");
+createNewItem("milk");
+createNewItem("cheese");
+createNewItem("carrot");
+createNewItem("fish");
+createNewItem("meat");
